@@ -1,6 +1,7 @@
 'use client'
 import React from 'react';
 import {Button} from "@/components/ui/button";
+import Link from "next/link";
 
 export default function NavigationMenuDemo() {
     const toggleMenu = () => {
@@ -18,15 +19,13 @@ export default function NavigationMenuDemo() {
 
                     {/* Desktop Menu */}
                     <div className="hidden sm:flex sm:items-center space-x-4">
-                        {/*<a href="#" className="text-gray-700 hover:text-blue-500">Home</a>*/}
-                        {/*<a href="#" className="text-gray-700 hover:text-blue-500">About</a>*/}
-                        {/*<a href="#" className="text-gray-700 hover:text-blue-500">Services</a>*/}
-                        {/*<a href="#" className="text-gray-700 hover:text-blue-500">Contact</a>*/}
-                        <Button variant={"outline"}>Home</Button>
-                        <Button variant={"outline"}>About</Button>
-                        <Button variant={"outline"}>Services</Button>
-                        <Button variant={"outline"}>Contact</Button>
-
+                        <Link href={"#"}>
+                            <Button variant={"ghost"} >Home</Button>
+                        </Link>
+                        {/*<Button variant={"ghost"} >About</Button>*/}
+                        <Button variant={"ghost"} >Services</Button>
+                        {/*<Button variant={"ghost"} >Contact</Button>*/}
+                        <Button variant={"ghost"} >Cart</Button>
                     </div>
 
                     {/* Mobile Menu Button */}
@@ -34,7 +33,7 @@ export default function NavigationMenuDemo() {
                         {/*<button onClick={toggleMenu} className="text-gray-500 hover:text-blue-500">*/}
                         {/*    Menu*/}
                         {/*</button>*/}
-                        <Button variant={"outline"} onClick={toggleMenu}>
+                        <Button variant={"ghost"} onClick={toggleMenu}>
                             Menu
                         </Button>
                     </div>
