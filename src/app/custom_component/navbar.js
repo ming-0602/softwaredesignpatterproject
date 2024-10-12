@@ -3,7 +3,7 @@ import React from 'react';
 import {Button} from "@/components/ui/button";
 import Link from "next/link";
 
-export default function NavigationMenuDemo() {
+export default function NavigationMenu() {
     const toggleMenu = () => {
         const menu = document.getElementById("mobile-menu");
         menu.classList.toggle("hidden");
@@ -19,12 +19,12 @@ export default function NavigationMenuDemo() {
 
                     {/* Desktop Menu */}
                     <div className="hidden sm:flex sm:items-center space-x-4">
-                        <Link href={"#"}>
+                        <Link href={"/"}>
                             <Button variant={"ghost"} >Home</Button>
                         </Link>
-                        {/*<Button variant={"ghost"} >About</Button>*/}
-                        <Button variant={"ghost"} >Services</Button>
-                        {/*<Button variant={"ghost"} >Contact</Button>*/}
+                        <Link href={"/product"}>
+                            <Button variant={"ghost"} >Product</Button>
+                        </Link>
                         <Button variant={"ghost"} >Cart</Button>
                     </div>
 
@@ -43,10 +43,15 @@ export default function NavigationMenuDemo() {
             {/* Mobile Menu */}
             <div id="mobile-menu" className="hidden sm:hidden">
                 <div className="space-y-1 px-2 pt-2 pb-3">
-                    <Button variant={"ghost"} size={"lg"} className={"block w-full"}>Home</Button>
-                    <Button variant={"ghost"} size={"lg"} className={"block w-full"}>About</Button>
-                    <Button variant={"ghost"} size={"lg"} className={"block w-full"}>Services</Button>
-                    <Button variant={"ghost"} size={"lg"} className={"block w-full"}>Contact</Button>
+                    <Link href={"/"}>
+                        <Button variant={"ghost"} size={"lg"} className={"block w-full"}>Home</Button>
+                    </Link>
+                    <Link href={"/product"}>
+                        <Button variant={"ghost"} size={"lg"} className={"block w-full"}>Product</Button>
+                    </Link>
+                    <Link href={"/cart"}>
+                        <Button variant={"ghost"} size={"lg"} className={"block w-full"}>Cart</Button>
+                    </Link>
                 </div>
             </div>
         </nav>
