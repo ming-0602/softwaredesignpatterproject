@@ -10,11 +10,12 @@ export default function Page(){
     useEffect(() => {
         const fetchProducts = async () => {
             try {
-                const response = await fetch('http://127.0.0.1:5001/api/products/'); // Replace with your Flask API URL
+                const response = await fetch('http://127.0.0.1:5001/api/products/');
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
                 }
                 const data = await response.json();
+                console.log(data)
                 setProducts(data);
             } catch (error) {
                 console.error('Error fetching products:', error);
@@ -25,7 +26,7 @@ export default function Page(){
 
     const handleAddtoCart = async (productName, productid, productimg, productprice) => {
         try {
-            const response = await fetch('http://127.0.0.1:5002/api/cart/', { // Replace with your Flask API URL for cart
+            const response = await fetch('http://127.0.0.1:5002/api/cart/', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -51,7 +52,6 @@ export default function Page(){
             alert('Error adding to cart');
         }
     }
-
     return(
         <div>
             <NavigationMenu></NavigationMenu>

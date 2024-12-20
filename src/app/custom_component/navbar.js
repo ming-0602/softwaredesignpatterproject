@@ -25,7 +25,9 @@ export default function NavigationMenu() {
                         <Link href={"/product"}>
                             <Button variant={"ghost"} >Product</Button>
                         </Link>
-                        <Button variant={"ghost"} >Cart</Button>
+                        <Link href={'/cart'}>
+                            <Button variant={"ghost"} >Cart</Button>
+                        </Link>
                     </div>
 
                     {/* Mobile Menu Button */}
